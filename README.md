@@ -4,8 +4,7 @@
 05/08/2024
 
 ## Introdução
-
-![Visualização das transações Pix utilizando t-SNE](newplot.png)
+![Visualização das transações Pix utilizando t-SNE](https://github.com/user-attachments/assets/d775c29e-0629-4ac6-aeef-fed9a2bff85c)
 *Figura 1: Visualização das transações Pix utilizando t-SNE (t-distributed Stochastic Neighbor Embedding).*
 
 Nesta atividade, exploramos a integração de técnicas avançadas de Processamento de Linguagem Natural (PLN) com dados abertos governamentais fornecidos pelo Banco Central do Brasil. O foco principal é na criação e utilização de embeddings por meio de modelos de transformers de última geração.
@@ -17,8 +16,7 @@ O objetivo é utilizar essas técnicas para identificar transações Pix potenci
 ## Seleção do Conjunto de Dados
 
 O conjunto de dados selecionado foi obtido do Banco Central do Brasil e contém estatísticas detalhadas sobre transações Pix. Este conjunto de dados inclui os seguintes parâmetros:
-
-![Exemplo do conjunto de dados de transações Pix](Screenshot%20from%202024-08-05%2015-55-55)
+![Exemplo do conjunto de dados de transações Pix](https://github.com/user-attachments/assets/6c373b89-19c8-46f4-a485-7c83a59a1bc0)
 *Figura 2: Exemplo do conjunto de dados de transações Pix.*
 
 - **AnoMes**: Período da transação.
@@ -76,16 +74,15 @@ O processo de criação dos embeddings envolveu a utilização do modelo selecio
    > `"AnoMes: 202212, PAG_PFPJ: PF, REC_PFPJ: PF, PAG_REGIAO: NORDESTE, REC_REGIAO: NORDESTE, PAG_IDADE: Nao informado, REC_IDADE: entre 20 e 29 anos, FORMAINICIACAO: DICT, NATUREZA: P2P, FINALIDADE: Pix, VALOR: 2963,41, QUANTIDADE: 21"`
 
    Esta string foi então utilizada pelo modelo para gerar um vetor de 1024 dimensões. Para o processamento, foi utilizado o Google Colab que disponibiliza GPU para o processamento.
-
-   ![Ambiente Google Colab utilizado para processamento com GPU](image.png)
+   
+   ![Ambiente Google Colab utilizado para processamento com GPU](https://github.com/user-attachments/assets/229a9a90-8dc4-49a5-9e85-85ffd9b204d4)
    *Figura 3: Ambiente Google Colab utilizado para processamento com GPU.*
 
-3. **Armazenamento dos Embeddings:** Os vetores resultantes foram armazenados em um arquivo JSON para uso posterior.
-
-![Vetor de 1024 dimensões gerado a partir da string acima](Screenshot%20from%202024-08-05%2015-54-39)
+4. **Armazenamento dos Embeddings:** Os vetores resultantes foram armazenados em um arquivo JSON para uso posterior.
+![Vetor de 1024 dimensões gerado a partir da string acima](https://github.com/user-attachments/assets/887190e3-362f-4a59-a412-2898340a14dd)
 *Figura 4: Vetor de 1024 dimensões gerado a partir da string acima.*
 
-## Armazenamento dos Embeddings no Banco de Dados Vetorial
+## Armazenamento dos Embeddings no Banco de Dados Vetorial Milvus
 
 Os embeddings foram armazenados no banco de dados vetorial Milvus, que permite consultas eficientes utilizando distâncias como a euclidiana e cosseno, entre outras, para similaridade semântica.
 
@@ -93,8 +90,7 @@ Os embeddings foram armazenados no banco de dados vetorial Milvus, que permite c
 
 1. **Criação da Conexão com Milvus:** Estabeleceu-se uma conexão com o banco de dados Milvus.
 2. **Preparação dos Dados:** Os dados foram preparados para serem inseridos no banco de dados, garantindo a correspondência entre os textos originais e seus embeddings.
-
-   ![Schema do banco de dados contendo ID, vetor e texto original](Screenshot%20from%202024-08-05%2016-02-59)
+   ![Schema do banco de dados contendo ID, vetor e texto original](https://github.com/user-attachments/assets/f67f8be8-2ac3-41c1-af07-da55b42e34cb)
    *Figura 5: Schema do banco de dados contendo ID, vetor e texto original.*
 
 3. **Inserção dos Dados:** Os embeddings foram inseridos no banco de dados Milvus.
@@ -112,8 +108,7 @@ Como hipótese de uma transação potencialmente fraudulenta, com o objetivo de 
 1. **Formulação da Consulta:** Consultas foram formuladas para identificar descrições de transações semelhantes, possivelmente fraudulentas.
 2. **Execução da Busca:** A busca foi executada no banco de dados Milvus utilizando a distância cosseno.
 3. **Interpretação dos Resultados:** Os resultados foram interpretados para identificar padrões e insights. Por exemplo, ao buscar por 20 transações semelhantes, obteve-se o gráfico mostrado abaixo:
-
-   ![20 transações semelhantes à string pesquisada](sasa.png)
+   ![20 transações semelhantes à string pesquisada](https://github.com/user-attachments/assets/93c2ce27-53ce-4f45-a9b5-a771d2dc8320)
    *Figura 6: 20 transações semelhantes à string pesquisada.*
 
 ## Visualização dos Dados
