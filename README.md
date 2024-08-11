@@ -15,7 +15,7 @@ O objetivo é utilizar essas técnicas para identificar transações Pix potenci
 
 ## Seleção do Conjunto de Dados
 
-O conjunto de dados selecionado foi obtido do Banco Central do Brasil e contém estatísticas detalhadas sobre transações Pix referentes ao mês Novembro do ano de 2020. Este conjunto de dados inclui os seguintes parâmetros:
+O conjunto de dados selecionado foi obtido do Banco Central do Brasil e contém estatísticas detalhadas sobre transações Pix referente ao mês de Novembro do ano de 2020. Este conjunto de dados inclui os seguintes parâmetros:
 ![Exemplo do conjunto de dados de transações Pix](https://github.com/user-attachments/assets/6c373b89-19c8-46f4-a485-7c83a59a1bc0)
 *Figura 2: Exemplo do conjunto de dados de transações Pix.*
 
